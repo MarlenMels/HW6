@@ -16,40 +16,14 @@ public class Main {
         double greatest = 0;
         double average = 0;
         double smallest = 0;
-        //todo дописать логику программы ниже.
-        if(first > second && first > third) {
-            greatest = first;
-        } else if(second > first && second > third) {
-            greatest = second;
-        } else{
-            greatest = third;
-        }
 
+        greatest = (first > second) ? first : second;
+        greatest = (greatest > third) ? greatest : third;
 
+        smallest = (first < second) ? first : second;
+        smallest = (smallest < third) ? smallest : third;
 
-        if(first < second && first < third) {
-            smallest = first;
-        } else if(second < first && second < third) {
-            smallest = second;
-        } else{
-            smallest = third;
-        }
-
-        if((greatest == first && smallest == second) || (greatest == second && smallest == first)){
-            average = third;
-        } else if((greatest == third && smallest == second) || (greatest == second && smallest == third)){
-            average = first;
-        }
-        else{
-            average = second;;
-        }
-
-
-
-
-
-
-        //todo
+        average = ((greatest == first) && (smallest == second) || (greatest == second && smallest == first)) ? third : (((greatest == third) && (smallest == second) || (greatest == second && smallest == third)) ? first : (((greatest == third) && (smallest == first) || (greatest == first && smallest == third)) ? second : first));
 
 
         System.out.println("Наибольший вес: " + greatest);
