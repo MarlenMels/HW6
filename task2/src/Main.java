@@ -25,7 +25,7 @@ public class Main {
             greatest = third;
         }
 
-        average = (first + second + third) / 3;
+
 
         if(first < second && first < third) {
             smallest = first;
@@ -33,6 +33,15 @@ public class Main {
             smallest = second;
         } else{
             smallest = third;
+        }
+
+        if((greatest == first && smallest == second) || (greatest == second && smallest == first)){
+            average = third;
+        } else if((greatest == third && smallest == second) || (greatest == second && smallest == third)){
+            average = first;
+        }
+        else{
+            average = second;;
         }
 
 
